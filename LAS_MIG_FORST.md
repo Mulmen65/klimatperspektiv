@@ -1,46 +1,23 @@
-# Malmö Klimatperspektiv 1.2.1 – rättning för GitHub och Streamlit
+# Malmö Klimatperspektiv 1.3.0 – Cirkularitet: känslighet och osäkerhet
 
-Version 1.2.1 rättar felet där Streamlit inte hittar `app/shell.html`.
-Alla gränssnittsfiler och data finns nu samlade i `klimatperspektiv_data.json`.
-Beräkningsmetod, cirkularitetsfunktioner och användarens styrning av boendeyta
-per person och per hushåll är desamma som i 1.2.0.
+19 november 2026. Uppdatering av version 1.2.1.
 
-## Uppdatera den befintliga appen
+## Uppdatera din befintliga GitHub/Streamlit-app
 
-1. Packa upp huvudfilen `Malmo_Klimatperspektiv_1_2_1_Streamlit_fix.zip` på datorn.
-2. Öppna det GitHub-repo som den befintliga Streamlit-appen använder.
-3. Välj **Add file → Upload files**. Ladda upp just dessa tre uppackade filer
-   direkt i repots huvudmapp, på samma nivå:
-   - `streamlit_app.py` – ersätt den tidigare versionen.
-   - `klimatperspektiv_data.json` – ladda upp hela filen.
-   - `requirements.txt` – ersätt den tidigare versionen.
-4. Spara med **Commit changes** på den gren som Streamlit-appen använder.
-5. Kontrollera att startfilen i Streamlit är `streamlit_app.py`.
-   Om appen fortfarande visar det gamla felet, starta om den med **Reboot app**.
+1. Packa upp detta paket.
+2. Ladda upp och ersätt tre filer i GitHub-repots huvudmapp: `streamlit_app.py`, `klimatperspektiv_data.json` och `requirements.txt`.
+3. Spara med Commit changes. Startfilen i Streamlit ska vara `streamlit_app.py`. Starta om appen vid behov.
+4. Öppna Cirkularitet. Där finns den nya analysen. Kontrollera att versionsuppgiften är 1.3.0.
 
-Ladda upp filerna, inte huvud-ZIP-filen. De tre filerna ska ligga i samma mapp
-och behålla sina namn. Ingen GitHub Action eller API-nyckel behövs.
-Eventuella gamla mappar `app/` och `data/` kan ligga kvar; den nya
-`klimatperspektiv_data.json` används när den finns bredvid startfilen.
+Ladda upp filerna, inte ZIP-filen. Ingen GitHub Action eller API-nyckel behövs.
 
-Efter uppdateringen visar modellens versionsuppgift **1.2.1**.
-Gamla scenarier kan läsas in på samma sätt som i 1.2.0.
+För direkt granskning utan Streamlit: öppna `Klimatperspektiv_Malmo_1_3_0.html` i webbläsaren. Den innehåller hela modellen; bakgrundskartan behöver internet.
 
-## Öppna utan Streamlit
+Knappen **Läs in beräknat exempel: Måttlig stegmodell** visar levererad analys med 1 000 dragningar och byter till exemplets modellantaganden. För egna scenarier: granska intervallen och välj **Beräkna känslighet och osäkerhet**. Osäkerhetsintervallen är villkorade analysantaganden, inte statistiskt verifierade Malmöintervall.
 
-Öppna `Klimatperspektiv_Malmo_1_2_1.html` direkt i webbläsaren.
-Beräkningar, gränssnitt och data ingår i filen. Bakgrundskartan kräver internet.
+Metod, källor och exempelresultat: `CIRKULARITET_1_3_ANALYS_OCH_REFERENSER.md`.
+Full redigerbar källkod, tester och råa exempeldragningar finns i `Kallkod_och_metod_1_3_0.zip`.
 
-## Källkod och metod
+Tidigare sparade scenarier kan läsas in. Vid scenarioändring räknas analysintervallen om och analysen behöver köras igen. Ärvda schabloner behåller redovisade verifieringsbehov. Exakt input-/output-tokenstatistik för denna uppdatering är inte tillgänglig.
 
-`Kallkod_och_metod_1_2_1.zip` innehåller redigerbar källkod, metodtexter,
-källförteckningar, exempel och tester. Den behöver inte laddas upp till GitHub
-för att köra appen. Ändra källkoden där och kör `python tools/bygg_leverans.py UTKATALOG`
-för att skapa en ny datafil och HTML-version efter ändringar.
-
-## Verifiering
-
-64 automatiska tester godkända: 52 tester av modellberäkningar och 12 av
-data/sidbygge, varav åtta särskilt kontrollerar installation utan app- och datamappar.
-Tre-filsversionen ger samma HTML-gränssnitt och samma nedladdningsbara underlag
-som källkodsversionen. Publicering i ditt Streamlit-konto har inte utförts.
+Beräknings- och paketeringstester har godkänts. Visuell webbläsarkontroll kunde inte utföras i arbetsmiljön. Appen är inte publicerad till ditt konto av denna leverans.

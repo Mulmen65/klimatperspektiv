@@ -19,7 +19,7 @@ SHELL = "app/shell.html"
 BUNDLE = "klimatperspektiv_data.json"
 MARKER = re.compile(r"\{\{([^}]+)\}\}")
 DATAFILER = ("data/grund_deso.json", "data/kol_deso.json", "data/utbyggnad_op2023.json", "data/deso_2025_malmo.geojson",
-             "data/land_malmo_osm.json", "data/metadata.json", "data/kallkontroll.json", "data/stadsutveckling.json", "data/metodtext.json", "data/bilageproveniens_1_2.json")
+             "data/land_malmo_osm.json", "data/metadata.json", "data/kallkontroll.json", "data/stadsutveckling.json", "data/metodtext.json", "data/bilageproveniens_1_2.json", "data/circular_analysis.json", "data/circular_demo.json")
 
 
 def _allowed(name: str) -> bool:
